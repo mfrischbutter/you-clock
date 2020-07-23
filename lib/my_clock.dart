@@ -10,7 +10,7 @@ class MyClock extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DashboardScreen(title: 'MyClock'),
+      home: DashboardScreen(),
     );
   }
 }
