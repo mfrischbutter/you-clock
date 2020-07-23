@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './ui/dashboard_screen.dart';
+import 'ui/alarms_screen.dart';
 
 class MyClock extends StatelessWidget {
   @override
@@ -7,10 +7,11 @@ class MyClock extends StatelessWidget {
     return MaterialApp(
       title: 'MyClock',
       theme: ThemeData(
+        backgroundColor: Color(0xF6F6F6),
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DashboardScreen(),
+      home: AlarmsScreen(),
     );
   }
 }
