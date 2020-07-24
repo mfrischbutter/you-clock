@@ -3,47 +3,47 @@ import 'package:flutter/material.dart';
 import 'package:you_clock/models/missions.dart';
 
 class CreateAlarmNotifier extends ChangeNotifier {
-  String _title = '';
-  TimeOfDay _time = TimeOfDay.now();
-  DateTime _dateTime = DateTime.now();
-  MissionsModel _mission = MissionsModel().standard;
-  String _ringtone = ''; //Type maybe as filepath?
-  double _volume = 1.0;
+  final Map<String, dynamic> _settings = {};
 
-  String get title => _title;
-  TimeOfDay get time => _time;
-  DateTime get dateTime => _dateTime;
-  MissionsModel get mission => _mission;
-  String get ringtone => _ringtone;
-  double get volume => _volume;
+  String get title => _settings['title'] ?? '';
+  TimeOfDay get time => _settings['time'] ?? TimeOfDay.now();
+  DateTime get dateTime => _settings['dateTime'] ?? DateTime.now();
+  MissionsModel get mission => _settings['mission'] ?? MissionsModel().standard;
+  String get ringtone => _settings['ringtone'] ?? ''; //Type maybe as filepath?
+  double get volume => _settings['volume'] ?? '';
 
   void changeTitle(value) {
-    _title = value;
+    _settings['time'] = value;
     notifyListeners();
   }
 
   void changeTime(value) {
-    _time = value;
+    _settings['time'] = value;
     notifyListeners();
   }
 
   void changeDateTime(value) {
-    _dateTime = value;
+    _settings['dateTime'] = value;
     notifyListeners();
   }
 
   void changeMission(value) {
-    _mission = value;
+    _settings['mission'] = value;
     notifyListeners();
   }
 
   void changeRingtone(value) {
-    _ringtone = value;
+    _settings['ringtone'] = value;
     notifyListeners();
   }
 
   void changeVolume(value) {
-    _volume = value;
+    _settings['volume'] = value;
+    notifyListeners();
+  }
+
+  void cancel() {
+    _settings.clear();
     notifyListeners();
   }
 }
