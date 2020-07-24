@@ -14,7 +14,7 @@ class MyClock extends StatelessWidget {
         SizeConfig().init(context);
         return Theme(
           data: ThemeData(
-            backgroundColor: Color(0xF6F6F6),
+            backgroundColor: Color(0xFFF6F6F6),
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
             textTheme: GoogleFonts.muliTextTheme().merge(TextTheme(

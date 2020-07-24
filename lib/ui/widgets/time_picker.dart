@@ -1,8 +1,5 @@
-import 'dart:isolate';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:android_alarm_manager/android_alarm_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:you_clock/notifier/create_alarm.dart';
 
