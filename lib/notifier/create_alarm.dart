@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:you_clock/models/missions.dart';
 
+/// This Notifier needs maybe another solution - too many values that dont need to be notified
 class CreateAlarmNotifier extends ChangeNotifier {
   final Map<String, dynamic> _settings = {};
 
@@ -14,7 +15,6 @@ class CreateAlarmNotifier extends ChangeNotifier {
 
   void changeTitle(value) {
     _settings['time'] = value;
-    notifyListeners();
   }
 
   void changeTime(value) {
@@ -29,17 +29,14 @@ class CreateAlarmNotifier extends ChangeNotifier {
 
   void changeMission(value) {
     _settings['mission'] = value;
-    notifyListeners();
   }
 
   void changeRingtone(value) {
     _settings['ringtone'] = value;
-    notifyListeners();
   }
 
   void changeVolume(value) {
     _settings['volume'] = value;
-    notifyListeners();
   }
 
   void cancel() {
