@@ -38,7 +38,7 @@ class _CreateAlarmCardState extends State<CreateAlarmCard> {
         children: <Widget>[
           SizedBox(
               width: SizeConfig.blockSizeHorizontal * 40,
-              height: SizeConfig.blockSizeVertical * 20,
+              height: SizeConfig.blockSizeVertical * 10,
               child: TimePicker()),
         ],
       ),

@@ -3,6 +3,8 @@ import 'dart:isolate';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:android_alarm_manager/android_alarm_manager.dart';
+import 'package:provider/provider.dart';
+import 'package:you_clock/notifier/create_alarm.dart';
 
 class TimePicker extends StatefulWidget {
   TimePicker({Key key}) : super(key: key);
@@ -20,13 +22,18 @@ class _TimePickerState extends State<TimePicker> {
   @override
   Widget build(BuildContext context) {
     TimeOfDay selectedTime;
-    return GestureDetector(
-      child: Text(
-        TimeOfDay.now().format(context),
-        style: Theme.of(context).textTheme.headline3,
-      ),
-      onTap: () async {
-        selectedTime = await _openTimePicker(context);
+    return Consumer<CreateAlarmNotifier>(
+      builder: (context, model, child) {
+        return GestureDetector(
+          child: Text(
+            model.time.format(context),
+            style: Theme.of(context).textTheme.headline3,
+          ),
+          onTap: () async {
+            selectedTime = await _openTimePicker(context);
+            model.changeTime(selectedTime);
+          },
+        );
       },
     );
   }
