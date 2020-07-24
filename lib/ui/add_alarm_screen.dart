@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:you_clock/configs/size_config.dart';
+import 'package:you_clock/ui/widgets/add_alarm_card.dart';
 import 'package:you_clock/ui/widgets/custom_app_bar.dart';
 
 class AddAlarmScreen extends StatelessWidget {
@@ -7,6 +8,7 @@ class AddAlarmScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     SizeConfig().init(context);
 
     return Scaffold(
@@ -18,9 +20,11 @@ class AddAlarmScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(
             horizontal: SizeConfig.blockSizeHorizontal * 4),
         child: SingleChildScrollView(
-          child: Text('WOW'),
+          child: AddAlarmCard(),
         ),
       )),
     );
   }
+
+
 }

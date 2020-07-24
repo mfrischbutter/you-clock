@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:you_clock/configs/size_config.dart';
@@ -13,6 +14,14 @@ class MyClock extends StatelessWidget {
         SizeConfig().init(context);
         return Theme(
           data: ThemeData(
+            cupertinoOverrideTheme: CupertinoThemeData(
+              textTheme: CupertinoTextThemeData(
+                dateTimePickerTextStyle: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                  fontSize: SizeConfig.blockSizeHorizontal * 7
+                )
+              )
+            ),
             backgroundColor: Color(0xF6F6F6),
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
