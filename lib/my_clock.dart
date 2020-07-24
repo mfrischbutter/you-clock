@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:you_clock/configs/size_config.dart';
-import 'package:you_clock/ui/add_alarm_screen.dart';
+import 'package:you_clock/ui/create_alarm_screen.dart';
 import 'ui/alarms_screen.dart';
 
 class MyClock extends StatelessWidget {
@@ -14,20 +14,12 @@ class MyClock extends StatelessWidget {
         SizeConfig().init(context);
         return Theme(
           data: ThemeData(
-            cupertinoOverrideTheme: CupertinoThemeData(
-              textTheme: CupertinoTextThemeData(
-                dateTimePickerTextStyle: TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: SizeConfig.blockSizeHorizontal * 7
-                )
-              )
-            ),
             backgroundColor: Color(0xF6F6F6),
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
             textTheme: GoogleFonts.muliTextTheme().merge(TextTheme(
               headline1: TextStyle(
-                fontSize: SizeConfig.blockSizeHorizontal * 10,
+                fontSize: SizeConfig.blockSizeHorizontal * 9,
               ),
               headline2: TextStyle(
                 fontSize: SizeConfig.blockSizeHorizontal * 6,
@@ -47,8 +39,8 @@ class MyClock extends StatelessWidget {
         );
       },
       routes: {
-        '/'         : (BuildContext context) => AlarmsScreen(),
-        '/addAlarm' : (BuildContext context) => AddAlarmScreen(),
+        '/': (BuildContext context) => AlarmsScreen(),
+        '/addAlarm': (BuildContext context) => CreateAlarmScreen(),
       },
       initialRoute: '/',
     );

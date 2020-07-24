@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:you_clock/configs/size_config.dart';
 import 'package:you_clock/ui/widgets/time_picker.dart';
 
-class AddAlarmCard extends StatefulWidget {
-  AddAlarmCard({Key key}) : super(key: key);
+class CreateAlarmCard extends StatefulWidget {
+  CreateAlarmCard({Key key}) : super(key: key);
 
   @override
-  _AddAlarmCardState createState() => _AddAlarmCardState();
+  _CreateAlarmCardState createState() => _CreateAlarmCardState();
 }
 
-class _AddAlarmCardState extends State<AddAlarmCard> {
-
-  double containerHeight = SizeConfig.blockSizeVertical * 14; //will be changed in initState()
+class _CreateAlarmCardState extends State<CreateAlarmCard> {
+  double containerHeight =
+      SizeConfig.blockSizeVertical * 14; //will be changed in initState()
 
   @override
   void initState() {
@@ -37,15 +37,15 @@ class _AddAlarmCardState extends State<AddAlarmCard> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(
-            width: SizeConfig.blockSizeHorizontal * 40,
-            height: SizeConfig.blockSizeVertical * 20,
-            child: TimePicker()),
+              width: SizeConfig.blockSizeHorizontal * 40,
+              height: SizeConfig.blockSizeVertical * 20,
+              child: TimePicker()),
         ],
       ),
     );
   }
 
-  _openCard() async{
+  _openCard() async {
     await Future.delayed(Duration(milliseconds: 300));
     setState(() {
       containerHeight = SizeConfig.blockSizeVertical * 84;

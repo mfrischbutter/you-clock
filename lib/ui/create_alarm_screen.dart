@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:you_clock/configs/size_config.dart';
-import 'package:you_clock/ui/widgets/add_alarm_card.dart';
+import 'package:you_clock/ui/widgets/create_alarm_card.dart';
 import 'package:you_clock/ui/widgets/custom_app_bar.dart';
 
-class AddAlarmScreen extends StatelessWidget {
-  const AddAlarmScreen({Key key}) : super(key: key);
+class CreateAlarmScreen extends StatelessWidget {
+  const CreateAlarmScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     SizeConfig().init(context);
 
     return Scaffold(
@@ -20,11 +19,9 @@ class AddAlarmScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(
             horizontal: SizeConfig.blockSizeHorizontal * 4),
         child: SingleChildScrollView(
-          child: AddAlarmCard(),
+          child: CreateAlarmCard(),
         ),
       )),
     );
   }
-
-
 }
