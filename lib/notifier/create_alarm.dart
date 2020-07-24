@@ -1,29 +1,49 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:you_clock/models/missions.dart';
 
 class CreateAlarmNotifier extends ChangeNotifier {
-  final Map<String, dynamic> _settings = {};
+  String _title = '';
+  TimeOfDay _time = TimeOfDay.now();
+  DateTime _dateTime = DateTime.now();
+  MissionsModel _mission = MissionsModel().standard;
+  String _ringtone = ''; //Type maybe as filepath?
+  double _volume = 1.0;
 
-  String get id => _settings['id'];
-  TimeOfDay get time => _settings['time'] ?? TimeOfDay.now();
-  DateTime get dateTime => _settings['dateTime'] ?? DateTime.now();
+  String get title => _title;
+  TimeOfDay get time => _time;
+  DateTime get dateTime => _dateTime;
+  MissionsModel get mission => _mission;
+  String get ringtone => _ringtone;
+  double get volume => _volume;
 
-  void changeId(id) {
-    _settings['id'] = id;
-  }
-
-  void changeTime(time) {
-    _settings['time'] = time;
+  void changeTitle(value) {
+    _title = value;
     notifyListeners();
   }
 
-  void changeDateTime(dateTime) {
-    _settings['dateTime'] = dateTime;
+  void changeTime(value) {
+    _time = value;
     notifyListeners();
   }
 
-  void cancel() {
-    _settings.clear();
+  void changeDateTime(value) {
+    _dateTime = value;
+    notifyListeners();
+  }
+
+  void changeMission(value) {
+    _mission = value;
+    notifyListeners();
+  }
+
+  void changeRingtone(value) {
+    _ringtone = value;
+    notifyListeners();
+  }
+
+  void changeVolume(value) {
+    _volume = value;
     notifyListeners();
   }
 }
