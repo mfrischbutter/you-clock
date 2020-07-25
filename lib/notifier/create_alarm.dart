@@ -6,6 +6,7 @@ import 'package:you_clock/models/standard_mission.dart';
 class CreateAlarmNotifier extends ChangeNotifier {
   final Map<String, dynamic> _settings = {};
 
+  int get id => 0;
   String get title => _settings['title'] ?? '';
   TimeOfDay get time => _settings['time'] ?? TimeOfDay.now();
   DateTime get dateTime => _settings['dateTime'] ?? DateTime.now();
@@ -38,6 +39,8 @@ class CreateAlarmNotifier extends ChangeNotifier {
   void changeVolume(value) {
     _settings['volume'] = value;
   }
+
+  void save() {}
 
   void cancel() {
     _settings.clear();

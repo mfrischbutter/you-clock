@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:you_clock/configs/size_config.dart';
 
 class AlarmCard extends StatefulWidget {
-  AlarmCard({Key key, this.time, this.title, this.backgroundColor}) : super(key: key);
+  AlarmCard({Key key, this.time, this.title, this.backgroundColor})
+      : super(key: key);
 
   @required
   final String title;
@@ -24,7 +25,8 @@ class _AlarmCardState extends State<AlarmCard> {
           borderRadius:
               BorderRadius.circular(SizeConfig.blockSizeHorizontal * 5)),
       height: SizeConfig.blockSizeVertical * 14,
-      padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 4),
+      padding:
+          EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 4),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
