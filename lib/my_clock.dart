@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:you_clock/configs/size_config.dart';
-import 'package:you_clock/ui/create_alarm_screen.dart';
-import 'ui/alarms_screen.dart';
+import 'package:you_clock/ui/dashboard_screen.dart';
 
 class MyClock extends StatelessWidget {
   @override
@@ -39,8 +38,7 @@ class MyClock extends StatelessWidget {
         );
       },
       routes: {
-        '/': (BuildContext context) => AlarmsScreen(),
-        '/addAlarm': (BuildContext context) => CreateAlarmScreen(),
+        '/': (BuildContext context) => DashboardScreen(),
       },
       initialRoute: '/',
     );
